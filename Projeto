@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+struct Projeto{
+    int codigo;
+char nome [20];
+int desenvolvedor;
+char testeNome[20];
+char gerenteNome[20];
+
+}projeto;
+
+void CriarProjeto (){
+    system("cls");
+    printf("Informe o codigo Codigo do projeto: ");
+    scanf ("%i", &projeto.codigo);
+    printf("Informe o nome do Projeto (ate 20 caracteres): ");
+    scanf ("%s", &projeto.nome);
+    printf("Informe o nome do analista de testes (ate 20 caracteres): ");
+    scanf ("%s", &projeto.testeNome);
+    ConsultarProjeto();
+    system("cls");
+    printf ("\t\tProjeto incluido com sucesso.\n");
+}
+
+void AlterarProjeto(){
+    system("cls");
+    ConsultarProjeto();
+    CriarProjeto();
+    ConsultarProjeto();
+}
+
+void ConsultarProjeto(){
+    int x;
+    printf("\n\n %d - %s ", projeto.codigo, &projeto.nome);
+    printf("\nAnalista de testes :%s\n", &projeto.testeNome);
+    system ( "pause" );
+}
+
+//void menuProjeto(){
+main(){
+    int menu = 5;
+    int x = 5;
+    for(; x != 0;){
+        printf("1. Incluir Projeto\n");
+        printf("2. Alterar Projeto\n");
+        printf("3. Consultar Projeto\n");
+        printf("0. Voltar\nDigite a sua opcao: ");
+        scanf ("%d", &menu);
+
+        switch (menu){
+
+            case (1):
+                CriarProjeto ();
+            break;
+            case (2):
+                AlterarProjeto();
+            break;
+            case (3):
+                ConsultarProjeto();
+            break;
+            case (0):
+            break;
+            default:
+                printf ("\t\t\tOpcao invalida, digite novamente.\n\n");
+                system("cls");
+                printf("X = %d\n", x);
+
+
+        }
+    }
+}
